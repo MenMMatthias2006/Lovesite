@@ -1,0 +1,517 @@
+body {
+    margin: 0px; 
+}
+/** file previews **/
+.file-preview {
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+.file-preview img, .file-preview video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.file-preview {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 10px;
+}
+.file-preview .media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+.file-preview .media.portrait { aspect-ratio: 3 / 4; }
+.file-preview .media.landscape { aspect-ratio: 4 / 3; }
+
+.delete-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+/** God first **/
+.God-first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    background:
+        radial-gradient(120px 80px at 20% 20%, rgba(255,255,255,0.7), transparent 65%),
+        radial-gradient(140px 90px at 80% 30%, rgba(255,255,255,0.6), transparent 65%),
+        linear-gradient(135deg, #b6fff1 0%, #a7e6ff 45%, #c9b7ff 100%);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 12px 16px;
+    
+}
+.God-first p{
+    margin: 0;
+}
+.God {
+    font-size: 1.2em;
+}
+.cross {
+    font-size: xx-large;
+    margin-bottom: 0px;
+}
+/** main **/
+h1 {
+    color: blue;
+    margin: 0px;
+    
+}
+.main {
+    background-image: url("Images/heartBackground.png");
+    background-size: cover;
+    background-position: -40%;
+    display: flex;
+    flex-direction: column; /* stack children vertically */ 
+    align-items: center; /* horizontal centering */
+    justify-content: center; /* vertical centering */
+    text-align: center;
+    gap: 8px;
+    padding: 1rem;
+    height: 80vh;
+}
+
+.main p{
+    margin: 0;
+}
+/* stats */
+.titleStats {
+    text-align: center;
+    color: rgb(251, 66, 97);
+}
+
+.buttonMemmory {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+ul li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.imgList {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.textStats {
+    color: rgb(251, 66, 97);
+    font-weight: bold;
+}
+
+
+
+/* Button add memmorie (also style anchor link) */
+button, .open-add-memmory {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button::after, .open-add-memmory::after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+button:hover:after, .open-add-memmory:hover:after {
+     transform: translate(0, 0);
+}
+
+button:active, .open-add-memmory:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+button:hover, .open-add-memmory:hover {
+    outline: 0;
+}
+
+/* Make the anchor behave like a button when displayed */
+.open-add-memmory {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+}
+
+/* Memory Section - Romantic Styling */
+.memmoryDiv {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 192, 203, 0.2) 100%);
+}
+
+.Memmory {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe4e9 100%);
+    border: 2px solid rgba(251, 66, 97, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 30px;
+    box-shadow: 
+        0 10px 40px rgba(251, 66, 97, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.memmory-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.memmory-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    margin-left: auto;
+}
+
+.Memmory::before {
+    content: "💕";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.Memmory::after {
+    content: "✨";
+    position: absolute;
+    bottom: -15px;
+    right: 30px;
+    font-size: 20px;
+}
+
+.Memmory h2 {
+    color: rgb(251, 66, 97);
+    text-align: left;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(251, 66, 97, 0.1);
+    flex: 0 0 100%;
+}
+.memmory-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.memmory-title-row h2 {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+}
+.memmory-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.Memmory .datum {
+    text-align: left;
+    color: #d1557a;
+    font-style: italic;
+    font-size: 16px;
+    margin: 10px 0;
+    flex: 0 0 100%;
+}
+
+.Memmory .location {
+    text-align: left;
+    color: #999;
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    flex: 0 0 100%;
+}
+
+.Slide.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    flex: 0 0 auto;
+    gap: 14px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.Slide.show {
+    width: 320px;
+    height: 240px;
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.Slide.show.landscape { width: 360px; height: 240px; }
+.Slide.show.portrait { width: 300px; height: 400px; }
+
+.Slide.show .img.slideshow {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(251, 66, 97, 0.2);
+    transition: transform 0.3s ease;
+    background: #fff;
+}
+.Slide.show .slide-item {
+    display: none;
+    position: absolute;
+    inset: 0;
+}
+.Slide.show .slide-item.active { display: block; }
+
+.Slide.show .img.slideshow:hover {
+    transform: scale(1.05);
+}
+
+.Slide.show img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+    background: #fff;
+}
+.Slide.show video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+    background: #fff;
+}
+
+.slide-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .Memmory { flex-wrap: wrap; }
+    .memmory-media { margin-left: 0; }
+    .Slide.show { width: min(320px, 100%); }
+}
+.slide-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #111;
+    background: #fee6e3;
+    color: #111;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+.edit-memory-btn {
+    align-self: center;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    color: #7a7a7a;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+    opacity: 0.65;
+}
+.edit-memory-btn::after {
+    display: none;
+}
+.edit-memory-btn:hover {
+    opacity: 1;
+    border-color: rgba(0, 0, 0, 0.4);
+}
+.delete-memory-btn {
+    align-self: center;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    color: #9b6b6b;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1;
+    opacity: 0.55;
+}
+.delete-memory-btn::after {
+    display: none;
+}
+.delete-memory-btn:hover {
+    opacity: 0.9;
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Form styling for Add-memmory.html */
+.memmory-form {
+    max-width: 720px;
+    margin: 40px auto;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f7 100%);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 40px rgba(251,66,97,0.08);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'URW Chancery L', cursive;
+}
+.memmory-form h1 {
+    margin-top: 0;
+    color: rgb(251, 66, 97);
+}
+.memmory-form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+    color: #6b3841;
+}
+.memmory-form input[type="text"],
+.memmory-form input[type="date"],
+.memmory-form input[type="file"],
+.memmory-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+}
+.map-picker {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.memmory-map {
+    width: 480px;
+    height: 240px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.memmory-form textarea { min-height: 140px; resize: vertical; }
+.memmory-form input[type="submit"] {
+    margin-top: 16px;
+    background: linear-gradient(90deg,#ffd6df,#fff);
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #70031a;
+    font-weight: 700;
+    cursor: pointer;
+}
+.memmory-form .hint { color: #8e4954; font-size: 14px; margin-top: 8px; }
+
+.save-status {
+    min-height: 1.2em;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #7a3650;
+    font-weight: 600;
+}
+
+.save-status.is-saving {
+    color: #a36b00;
+}
+
+.save-status.is-saved {
+    color: #1f7a45;
+}
+
+.save-status.is-error {
+    color: #b42318;
+}
+
+#filePreviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.is-hidden {
+    display: none;
+}
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love journey💖</title>
+</head>
+<body>
+<!--God first-->    
+    <div class="God-first">
+         <p class="cross"> ✞ </p>
+         <p class="God"> God first </p>
+    </div>
+  <!--Main-->  
+    <div class="main"> 
+        <h1>Welkom bij onze liefdes reis💖</h1> 
+        <p> Gemaakt met liefde voor onze liefde</p>
+    </div>
+<!-- Statestieken op een rij-->
+    <div class="Stats">
+        <h2 class="titleStats"> Onze liefde in statestieken💕</h2>
+        <ul> 
+            <li> <img class="imgList" src="Images/agenda.png" alt="agedaPictogram">
+                 <p class="textStats" id="daysTogether">Dagen samen: </p> </li>
+            
+            <li> <img class="imgList" src="Images/memory.png" alt="memoryPictogram">
+                <p class="textStats" id="memoryMade">Herinneringen gemaakt: </p> </li>
+
+            <li> <img class="imgList" src="Images/kis.png" alt="kisPictogram">
+                <p class="textStats" id="kisses"> Kusjes:  </p> </li>
+            
+        </ul>
+    </div>
+
+    <div class="memmoryDiv">
+        <!-- Button to add memmories -->
+        <div class="buttonMemmory">
+                <a id="openAddMemmory" class="open-add-memmory" href="Add-memmory.html"> + Vergroot ons liefdes verhaal🥰 </a>
+            </div>
+    <div id="memmoriesList"></div>
+<Footer> </Footer>
+<!--Js file load afther loading hmtl to prevent errors-->        
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+     <script src="config.js?v=20260611"></script>
+     <script src="script.js?v=20260611"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voeg herinnering toe</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="memmory-form">
+        <h1 id="memmoryFormTitle">Voeg een herinnering toe</h1>
+        <p id="memmoryEditNote" class="hint is-hidden">Je bewerkt nu een bestaande herinnering.</p>
+        <form id="addMemmoryForm" action="Love website.html" method="post" enctype="multipart/form-data">
+            <label for="memmoryTitle">Titel</label>
+            <input type="text" id="memmoryTitle" name="title" required>
+
+            <label for="memmoryDate">Datum (maand/dag/jaar)</label>
+            <input type="date" id="memmoryDate" name="date">
+
+            <label for="memmoryLocation">Locatie</label>
+            <input type="text" name="memmoryLocation" id="memmoryLocation" placeholder="Zoek een plaats op de kaart" autocomplete="off">
+            <button type="button" id="locationSearchBtn">Zoek op kaart</button>
+            <div id="mapPicker" class="map-picker"></div>
+            <input type="hidden" id="memmoryLat" name="memmoryLat">
+            <input type="hidden" id="memmoryLng" name="memmoryLng">
+            <input type="hidden" id="memmoryPlaceId" name="memmoryPlaceId">
+
+            <label for="memmoryText">Schrijf de herinnering</label>
+            <textarea id="memmoryText" name="text"></textarea>
+
+            <label for="memmoryImages">Upload foto's</label>
+            <input type="file" id="memmoryImages" name="images" multiple accept="image/*, video/*">
+            <div id="filePreviews"></div>   
+            <button type="button" id="clearEditMedia" class="is-hidden">Verwijder alle media</button>
+            
+            <input type="submit" id="memmorySubmitBtn" value="Opslaan">
+            <p id="saveStatus" class="save-status" aria-live="polite"></p>
+        </form>
+        <p class="hint" id="memmorySubmitHint">Klik op Opslaan om terug te keren naar de hoofdpagina.</p>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js?v=20260611"></script>
+    <script src="script.js?v=20260611"></script>
+</body>
+</html>
