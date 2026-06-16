@@ -196,6 +196,7 @@ async function saveMemories(memories) {
     if (supabase) {
         try {
             const rows = [];
+            const savedMemories = [];
             for (const memory of normalized) {
                 const uploadedImages = [];
                 for (const image of Array.isArray(memory.images) ? memory.images : []) {
@@ -218,12 +219,17 @@ async function saveMemories(memories) {
                     text: memory.text,
                     images: uploadedImages
                 });
+
+                savedMemories.push({
+                    ...memory,
+                    images: uploadedImages
+                });
             }
 
             const { error } = await supabase.from('memories').upsert(rows, { onConflict: 'id' });
             if (!error) {
-                await persistLocalMemories(normalized);
-                return normalized;
+                await persistLocalMemories(savedMemories);
+                return savedMemories;
             }
             console.warn('Supabase write failed, continuing with local storage.', error);
         } catch (err) {
@@ -1071,4 +1077,3 @@ function initMemoryMaps() {
         el.dataset.initialized = 'true';
     });
 }
-
