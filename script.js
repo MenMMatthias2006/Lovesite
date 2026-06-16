@@ -942,7 +942,7 @@ function attachAddMemmoryHandler() {
         });
         selectedFiles = [];
 
-        setTimeout(() => { window.location.href = 'Love website.html'; }, 250);
+        setTimeout(() => { window.location.href = 'index.html'; }, 250);
     });
 }
 
